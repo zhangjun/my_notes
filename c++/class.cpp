@@ -1,7 +1,7 @@
 /****************************************************************
     File Name    : class.cpp
     Author       : Jun Zhang
-	Mail         : zhangjun9@staff.weibo.com 
+	Mail         : ewalker.zj@gmail.com 
 	Created Time : 2017-12-29 18-23
 *****************************************************************/
 

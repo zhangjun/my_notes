@@ -1,7 +1,7 @@
 /****************************************************************
     File Name    : map_test.cpp
     Author       : Jun Zhang
-	Mail         : zhangjun9@staff.weibo.com 
+	Mail         : ewalker.zj@gmail.com 
 	Created Time : 2018-02-09 14-29
 *****************************************************************/
 

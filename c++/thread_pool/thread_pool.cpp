@@ -1,7 +1,7 @@
 /****************************************************************
     File Name    : thread_pool.cpp
     Author       : Jun Zhang
-	Mail         : zhangjun9@staff.weibo.com 
+	Mail         : ewalker.zj@gmail.com 
 	Created Time : 2018-03-04 15-40
 *****************************************************************/
 

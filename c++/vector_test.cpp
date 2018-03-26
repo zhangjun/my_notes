@@ -1,7 +1,7 @@
 /*************************************************************************
 	> File Name: vector_test.cpp
 	> Author: Jun Zhang
-	> Mail: zhangjun9@staff.weibo.com 
+	> Mail: ewalker.zj@gmail.com 
 	> Created Time: Mon 11 Dec 2017 04:58:04 PM CST
  ************************************************************************/
 

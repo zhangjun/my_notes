@@ -1,7 +1,7 @@
 /****************************************************************
     File Name    : LinkList.h
     Author       : Jun Zhang
-	Mail         : zhangjun9@staff.weibo.com 
+	Mail         : ewalker.zj@gmail.com 
 	Created Time : 2018-03-17 21-20
 *****************************************************************/
 #ifndef _LINK_LIST_H

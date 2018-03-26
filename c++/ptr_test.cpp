@@ -1,7 +1,7 @@
 /****************************************************************
     File Name    : ptr_test.cpp
     Author       : Jun Zhang
-	Mail         : zhangjun9@staff.weibo.com 
+	Mail         : ewalker.zj@gmail.com 
 	Created Time : 2018-03-11 22-00
 *****************************************************************/
 

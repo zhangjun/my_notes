@@ -1,7 +1,7 @@
 /****************************************************************
     File Name    : smart_ptr.h
     Author       : Jun Zhang
-	Mail         : zhangjun9@staff.weibo.com 
+	Mail         : ewalker.zj@gmail.com 
 	Created Time : 2018-03-24 19-47
 *****************************************************************/
 

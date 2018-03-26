@@ -1,7 +1,7 @@
 /*************************************************************************
 	> File Name: topic_util.h
 	> Author: Jun Zhang
-	> Mail: zhangjun9@staff.weibo.com 
+	> Mail: ewalker.zj@gmail.com 
 	> Created Time: Fri 10 Nov 2017 04:31:18 PM CST
  ************************************************************************/
 #ifndef _TOPIC_UTIL_H
