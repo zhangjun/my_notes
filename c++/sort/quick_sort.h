@@ -68,6 +68,41 @@ void quick_sort_recursive(int arr[], int begin, int end){
     }
 }
 
+void quick_sort(int* A, int start , int end)
+{
+    if(A == NULL || start >= end)
+        return;
+
+    int key = A[start];
+
+    int left = start + 1;
+    int right = end;
+
+    while(left <= right)//×¢ÒâµÈºÅ
+    {   
+        while(A[left] <= key && left <= right)//×¢ÒâµÈºÅ
+            left ++; 
+        while(A[right] > key && left <= right)//×¢ÒâµÈºÅ
+            right --; 
+
+        if(left < right)
+        {
+            //printf("swap %d & %d\n", A[left], A[right]);
+            swap(&A[left], &A[right]);
+            left++;
+            right--;
+        }
+
+    }
+    //printlist(A, end - start + 1);
+    //printf("left %d righ %d\n", left, right);
+
+    swap(&A[start], &A[right]);
+
+    quickSort(A, start, left - 1);
+    quickSort(A, left + 1, end);
+}
+
 void quick_sort(int arr[], int len){
     quick_sort_recursive(arr, 0, len - 1);
 }
