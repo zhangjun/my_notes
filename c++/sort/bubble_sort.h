@@ -1,7 +1,7 @@
 /****************************************************************
     File Name    : bubble_sort.h
     Author       : Jun Zhang
-	Mail         : zhangjun9@staff.weibo.com 
+	Mail         : ewalker.zj@gmail.com 
 	Created Time : 2017-12-16 18-30
 *****************************************************************/
 // 交换相邻元素，每一趟将最大或者最小元素浮到顶端
