@@ -1,7 +1,7 @@
 /****************************************************************
     File Name    : shell_sort.h
     Author       : Jun Zhang
-	Mail         : zhangjun9@staff.weibo.com 
+	Mail         : ewalker.zj@gmail.com 
 	Created Time : 2017-12-17 10-07
 *****************************************************************/
 // 增量分组，每组插入排序，直至增量减至1
