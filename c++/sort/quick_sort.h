@@ -99,8 +99,8 @@ void quick_sort(int* A, int start , int end)
 
     swap(&A[start], &A[right]);
 
-    quickSort(A, start, left - 1);
-    quickSort(A, left + 1, end);
+    quick_sort(A, start, left - 1);
+    quick_sort(A, left + 1, end);
 }
 
 void quick_sort(int arr[], int len){
