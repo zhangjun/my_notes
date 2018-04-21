@@ -1,7 +1,7 @@
 /****************************************************************
     File Name    : select_sort.h
     Author       : Jun Zhang
-	Mail         : zhangjun9@staff.weibo.com 
+	Mail         : ewalker.zj@gmail.com 
 	Created Time : 2017-12-16 17-42
 *****************************************************************/
 // 每趟从待排序元素中选择最小的元素作为首元素
