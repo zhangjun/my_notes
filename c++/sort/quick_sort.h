@@ -1,7 +1,7 @@
 /****************************************************************
     File Name    : quick_sort.h
     Author       : Jun Zhang
-	Mail         : zhangjun9@staff.weibo.com 
+	Mail         : ewalker.zj@gmail.com 
 	Created Time : 2017-12-17 10-09
 *****************************************************************/
 // http://www.csl.mtu.edu/cs2321/www/newLectures/11_Quick_Sort.html
