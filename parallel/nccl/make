@@ -1,0 +1,1 @@
+nvcc -o nccl_example nccl_example.cu -I /search/odin/local/cuda-9.0/include/ -I /search/odin/zhangjun/software/nccl/include -L /search/odin/zhangjun/software/nccl/lib/ -lnccl

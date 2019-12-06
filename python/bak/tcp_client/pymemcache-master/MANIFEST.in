@@ -1,0 +1,5 @@
+include README.* ChangeLog.* setup.py setup.cfg LICENSE.txt
+recursive-include pymemcache *.py
+global-exclude *.pyc
+global-exclude *.pyo
+
