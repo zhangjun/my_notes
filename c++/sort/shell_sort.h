@@ -5,7 +5,7 @@
 	Created Time : 2017-12-17 10-07
 *****************************************************************/
 // 增量分组，每组插入排序，直至增量减至1
-// , o(ologn), o(n*n) o(1) unsteady
+//o(n^1.3), o(n), o(n*n) o(1) unsteady
 
 #ifndef _SHELL_SORT_H
 #define _SHELL_SORT_H

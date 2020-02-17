@@ -27,7 +27,7 @@ void select_sort(int arr[], int len){
        
         min = i;
         for(j = i + 1; j < len; j ++){
-            if(arr[j] < min)
+            if(arr[j] < arr[min])
                 min = j;
         }
         swap(&arr[min], &arr[i]);

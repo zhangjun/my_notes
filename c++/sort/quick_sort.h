@@ -24,16 +24,14 @@ void swap(int *first, int *second){
 
 int partition(int arr[], int begin, int end){
     int pivot = arr[end];
-    int i = (begin - 1);
-    int j;
-    for(j = begin; j <= end - 1; j++){
+    int i = begin;
+    for(int j = begin; j <= end - 1; j++){
         if(arr[j] <= pivot){
-            i++;
-            swap(arr[i], arr[j]);
+            swap(arr[i ++], arr[j]);
         }
     }
-    swap(arr[i+1], arr[end]);
-    return i + 1;
+    swap(arr[i], arr[end]);
+    return i;
 }
 
 int partition(int arr[], int begin, int end){
@@ -60,6 +58,27 @@ int partition(int arr[], int begin, int end){
     return j;
 }
 
+int partition_v2(int arr[], int begin, int end) {
+    srand((unsigned)time(0));
+    int rand_idx = rand() % (end - begin + 1) + begin;
+    int povit = arr[rand_idx];
+    swap(arr[begin], arr[rand_idx]);
+
+    while(begin < end) {
+        while(begin < end && arr[end] >= povit) { 
+            end --;
+        }
+        arr[begin] = arr[end];
+        while(begin < end && arr[begin] <= povit) { 
+            begin ++;
+        }
+        arr[end] = arr[begin];
+    }
+    arr[begin] = povit;
+    return begin;
+}
+
+
 void quick_sort_recursive(int arr[], int begin, int end){
     if(begin < end){
         int idx = partition(arr, begin, end);
@@ -78,11 +97,11 @@ void quick_sort(int* A, int start , int end)
     int left = start + 1;
     int right = end;
 
-    while(left <= right)//×¢ÒâµÈºÅ
+    while(left <= right)//脳垄脪芒碌脠潞脜
     {   
-        while(A[left] <= key && left <= right)//×¢ÒâµÈºÅ
+        while(A[left] <= key && left <= right)//脳垄脪芒碌脠潞脜
             left ++; 
-        while(A[right] > key && left <= right)//×¢ÒâµÈºÅ
+        while(A[right] > key && left <= right)//脳垄脪芒碌脠潞脜
             right --; 
 
         if(left < right)

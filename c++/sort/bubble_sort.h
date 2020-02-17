@@ -31,8 +31,8 @@ void bubble_sort(int arr[], int len){
                 sorted = false;
             }
         }
-        if(sorted)
-            break;
+        if(sorted) break;
+    }
 }
 
 #endif
