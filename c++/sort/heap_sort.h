@@ -9,13 +9,8 @@
 #define _HEAP_SORT_H
 
 #include<iostream>
+#include "common.h"
 using namespace std;
-
-void swap(int &a, int &b){
-	int temp = a;
-	a = b;
-	b = temp;
-}
 
 void adjustHeap(int a[], int start, int end){
 	int tmp = a[start];
@@ -37,11 +32,15 @@ void adjustHeap(int a[], int start, int end){
 }
 
 void heap_sort(int a[], int len){
+    // build heap, top is max
 	for(int i = len / 2 - 1; i >= 0; i -- )
 		adjustHeap(a, i, len - 1);
 
+    //adjust from root, One by one extract an element from heap root
 	for(int i = len - 1; i > 0; i --){
+        // Move current root to end 
 		swap(a[0], a[i]);
+        // call max heapify on the reduced heap 
 		adjustHeap(a, 0, i - 1);
 	}
 }
