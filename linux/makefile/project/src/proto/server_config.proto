@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package ss;
+
+message Backend {
+	int32 label = 1;
+	string upstream_name = 2;
+	int32 timeout = 3;
+	int32 retry_max = 4;
+	repeated string servers = 5;
+};
+
+message HintBackend {
+	int32 label = 1;
+	string upstream_name = 2;
+	int32 timeout = 3;
+	int32 retry_max = 4;
+	repeated string servers = 5;
+};
+
+message BlacklistBackend {
+	int32 label = 1;
+	string upstream_name = 2;
+	int32 redirect_max = 3;
+	int32 retry_max = 4;
+	repeated string servers = 5;
+};
+
+message ServerConfig {
+	int32 port = 1;
+	int32 thread_num = 2;
+	Backend cache = 3;
+	HintBackend hint = 4;
+	BlacklistBackend blacklist = 5;
+};
