@@ -19,11 +19,11 @@ void consumer(){
     std::unique_lock<std::mutex> lock(mutex);
     while(val == 0)
         cond.wait(lock);
-    std::cout << "val" << std::endl;
+    std::cout << "val: " << val << std::endl;
     val = 0;
 }
 
-void producer(){
+void producer(int id){
     std::unique_lock<std::mutex> lock(mutex);
     val = id;
     cond.notify_one();
@@ -38,7 +38,7 @@ int main(){
 
     for(int i = 0; i < 10; i ++){
         producers[i].join();
-        consumers[i],join();
+        consumers[i].join();
     }
 
     return 0;
