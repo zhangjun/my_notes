@@ -11,13 +11,8 @@
 #define _SIMPLE_SORT_H
 
 #include<iostream>
+#include "common.h"
 using namespace std;
-
-void swap(int *first, int *second){
-    int tmp = *first;
-    *first = *second;
-    *second = *first;
-}
 
 void select_sort(int arr[], int len){
     int i, j;
@@ -30,7 +25,7 @@ void select_sort(int arr[], int len){
             if(arr[j] < arr[min])
                 min = j;
         }
-        swap(&arr[min], &arr[i]);
+        swap(arr[min], arr[i]);
 
     }
 }

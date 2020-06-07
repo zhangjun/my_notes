@@ -11,13 +11,8 @@
 #define _BUBBLE_SORT_H
 
 #include<iostream>
+#include "common.h"
 using namespace std;
-
-void swap(int *first, int *second){
-    int tmp = *first;
-    *first = *second;
-    *second = *first;
-}
 
 void bubble_sort(int arr[], int len){
     int i, j;

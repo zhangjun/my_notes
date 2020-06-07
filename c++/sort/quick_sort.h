@@ -13,14 +13,9 @@
 #include<iostream>
 #include<cstdlib>
 #include<time.h>
+#include "common.h"
 
 using namespace std;
-
-void swap(int *first, int *second){
-    int tmp = *first;
-    *first = *second;
-    *second = *first;
-}
 
 int partition(int arr[], int begin, int end){
     int pivot = arr[end];
@@ -107,7 +102,7 @@ void quick_sort(int* A, int start , int end)
         if(left < right)
         {
             //printf("swap %d & %d\n", A[left], A[right]);
-            swap(&A[left], &A[right]);
+            swap(A[left], A[right]);
             left++;
             right--;
         }
@@ -116,7 +111,7 @@ void quick_sort(int* A, int start , int end)
     //printlist(A, end - start + 1);
     //printf("left %d righ %d\n", left, right);
 
-    swap(&A[start], &A[right]);
+    swap(A[start], A[right]);
 
     quick_sort(A, start, left - 1);
     quick_sort(A, left + 1, end);

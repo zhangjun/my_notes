@@ -2,12 +2,8 @@
 #include <cstdlib>
 
 #include "merge_sort.h"
+#include "shell_sort.h"
 
-void swap(int& left, int& right) {
-    int temp = left;
-    left = right;
-    right = temp;
-}
 
 int partition_v1(int arr[], int begin, int end) {
     int pivot = arr[end];
@@ -59,7 +55,8 @@ void quick_sort(int arr[], int len) {
 int main() {
     int arr[12] = {4, 2, 3, 21, 19, 0 ,1, 9, 11, 7, 4, 6};
     //quick_sort(arr, 12);
-    merge_sort(arr, 12);
+    //merge_sort(arr, 12);
+    shell_sort_v2(arr, 12);
     for(int i = 0; i < 12; i++)
         std::cout << arr[i] << std::endl;
 
