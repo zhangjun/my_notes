@@ -1,1 +1,31 @@
-<mxfile host="app.diagrams.net" modified="2021-05-30T08:48:38.841Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.122 Safari/537.36" version="14.1.8" etag="sIlYtrdW1IZBalyiT4ow" type="github"><diagram id="jCE88WaOlY3Golm970wd">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-05-30T08:53:07.570Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.122 Safari/537.36" etag="wGcXiu7azNl9Jaxve0b9" version="14.1.8" type="github">
+  <diagram id="jCE88WaOlY3Golm970wd" name="第 1 页">
+    <mxGraphModel dx="912" dy="502" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bBoxAdAgDuTyjjE8kUGu-1" value="train" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="210" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="bBoxAdAgDuTyjjE8kUGu-2" value="inference" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="210" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="bBoxAdAgDuTyjjE8kUGu-3" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="254" y="234.5" as="sourcePoint" />
+            <mxPoint x="314" y="234.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bBoxAdAgDuTyjjE8kUGu-4" value="paddle model" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="210" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="bBoxAdAgDuTyjjE8kUGu-5" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="20" width="50" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="bBoxAdAgDuTyjjE8kUGu-6" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="175" width="20" height="120" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
