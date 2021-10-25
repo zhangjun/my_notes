@@ -1,1 +1,43 @@
-<mxfile host="app.diagrams.net" modified="2021-10-25T10:22:25.511Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" version="15.5.9" etag="Z4idW7cV6Q5SGxr9SLk8" type="github"><diagram id="g_IrjV4WjWfYUrQ9wEFa">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-10-25T12:30:51.462Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="SA7_vktUm2Oz_ITfVJkg" version="15.5.9" type="github">
+  <diagram id="g_IrjV4WjWfYUrQ9wEFa" name="Page-1">
+    <mxGraphModel dx="904" dy="494" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="JU-4OWZTt1YUu84-_J6a-9" value="" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;dashed=1;fillColor=#cdeb8b;direction=west;size=20;position=0.64;base=31;strokeColor=#36393d;position2=0.82;" vertex="1" parent="1">
+          <mxGeometry x="250" y="260" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="JU-4OWZTt1YUu84-_J6a-5" value="Apple A Series GPU" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="290" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="JU-4OWZTt1YUu84-_J6a-6" value="Intel GPU" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="290" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="JU-4OWZTt1YUu84-_J6a-7" value="AMD GPU" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="444" y="290" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="JU-4OWZTt1YUu84-_J6a-1" value="Paddle-Lite" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="60" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JU-4OWZTt1YUu84-_J6a-2" value="Metal" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="240" y="150" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="JU-4OWZTt1YUu84-_J6a-3" value="ARM CPU" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="200" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JU-4OWZTt1YUu84-_J6a-4" value="Apple GPU" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JU-4OWZTt1YUu84-_J6a-10" value="CoreML" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="590" y="20" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JU-4OWZTt1YUu84-_J6a-11" value="x86 CPU" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="449" y="200" width="81" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JU-4OWZTt1YUu84-_J6a-12" value="Neon / x86 instrinic" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="370" y="150" width="160" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
