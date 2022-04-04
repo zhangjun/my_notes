@@ -39,7 +39,7 @@ void ThreadPool::Stop(){
     }
 
     for(size_t i = 0; i < _threads.size(); ++ i){
-        _threads[i],join();
+        _threads[i].join();
     }
 }
 
