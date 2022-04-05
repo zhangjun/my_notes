@@ -1,0 +1,127 @@
+<mxfile host="app.diagrams.net" modified="2022-04-03T13:46:52.793Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="e3i0rC0H3iAKASyGWQub" version="17.4.0" type="github" pages="2">
+  <diagram id="AWOcZCu43fl_KOLMqHl1" name="pretictor">
+    <mxGraphModel dx="324" dy="494" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="AQ0Q51QRDwI_gQzqrRHL-1" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="980" y="230" as="sourcePoint" />
+            <mxPoint x="1070" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="8zgrNYFM5kxyyUlaMys1" name="executor">
+    <mxGraphModel dx="2256" dy="1790" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-1" value="NaiveExecutor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry x="-30" y="620" width="330" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-2" value="- place_: Place&#xa;- ops_: vector&lt;unique_ptr&lt;OperatorBase&gt;&gt;&#xa;- scope_: Scope*" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="7WLHaZvOcK6RHJFrd4OO-1" vertex="1">
+          <mxGeometry y="26" width="330" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="7WLHaZvOcK6RHJFrd4OO-1" vertex="1">
+          <mxGeometry y="70" width="330" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-4" value="+ Run(): void&#xa;+ Prepare(scope, desc, block_id, with_feed_fetch_ops): void&#xa;+ CreateVariables(desc, block_id, persistable, scope): void&#xa;+ CleanFeedFetchOps(): void&#xa;+ ResetTrtOps(num): void&#xa;+ FindTensor(name): LoDTensor*&#xa;+ scope(): Scope*&#xa;- CreateOps(desc, block_id, with_feed_fetch_ops): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="7WLHaZvOcK6RHJFrd4OO-1" vertex="1">
+          <mxGeometry y="78" width="330" height="122" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-5" value="Predictor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry x="400" y="-20" width="270" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-6" value="+ predictor_: unique_ptr&lt;PaddlePredictor&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="7WLHaZvOcK6RHJFrd4OO-5" vertex="1">
+          <mxGeometry y="26" width="270" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="7WLHaZvOcK6RHJFrd4OO-5" vertex="1">
+          <mxGeometry y="50" width="270" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-8" value="+ Predictor(config)&#xa;+ Run(): bool&#xa;+ Clone(): unique_ptr&lt;Predictor&gt;&#xa;+ GetInputHandle(name): unique_ptr&lt;Tensor&gt;&#xa;+ GetOutputHandle(name): unique_ptr&lt;Tensor&gt;&#xa;+ GetInputNames(): vector&lt;string&gt;&#xa;+ GetOutputName(): vector&lt;string&gt;&#xa;+ TryShrinkMemory(): unit64_t&#xa;+ ClearIntermediateTensor(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="7WLHaZvOcK6RHJFrd4OO-5" vertex="1">
+          <mxGeometry y="58" width="270" height="132" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-9" value="PaddlePredictor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry x="790" y="-20" width="310" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-10" value="+ predictor_: unique_ptr&lt;PaddlePredictor&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="7WLHaZvOcK6RHJFrd4OO-9" vertex="1">
+          <mxGeometry y="26" width="310" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="7WLHaZvOcK6RHJFrd4OO-9" vertex="1">
+          <mxGeometry y="50" width="310" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-12" value="+ Predictor(config)&#xa;+ Run(inputs, output_data, batch_size): bool&#xa;+ ZeroCopyRun(): bool&#xa;+ Clone(): unique_ptr&lt;PaddlePredictor&gt;&#xa;+ GetInputTensorShape(): map&lt;string, vector&lt;int64_t&gt;&gt;&#xa;+ GetInputTensor(name): unique_ptr&lt;ZeroCopyTensor&gt;&#xa;+ GetOutputTensor(name): unique_ptr&lt;ZeroCopyTensor&gt;&#xa;+ GetInputNames(): vector&lt;string&gt;&#xa;+ GetOutputName(): vector&lt;string&gt;&#xa;+ TryShrinkMemory(): unit64_t&#xa;+ ClearIntermediateTensor(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="7WLHaZvOcK6RHJFrd4OO-9" vertex="1">
+          <mxGeometry y="58" width="310" height="162" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-13" value="AnalysisPredictor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry x="540" y="320" width="310" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-14" value="- config_: AnalysisConfig&#xa;- executor_: unique_ptr&lt;NaiveExecutor&gt;&#xa;- place_: Place&#xa;- scope_: Scope&#xa;- inference_program: shared_ptr&lt;ProgramDesc&gt;&#xa;- op_compatible_map_: OpCompatibleMap&#xa;- feeds_: vector&lt;OpDesc*&gt;&#xa;- fetches_: vector&lt;OpDesc*&gt;&#xa;- feed_tensors_: vector&lt;LoDTensor&gt;&#xa;- predictor_id_: int&#xa;- status_is_cloned_: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="7WLHaZvOcK6RHJFrd4OO-13" vertex="1">
+          <mxGeometry y="26" width="310" height="184" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="7WLHaZvOcK6RHJFrd4OO-13" vertex="1">
+          <mxGeometry y="210" width="310" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-16" value="+ Init(parent_scope, program): bool&#xa;+ Run(inputs, output_data, batch_size): bool&#xa;+ ZeroCopyRun(): bool&#xa;+ Clone(): unique_ptr&lt;PaddlePredictor&gt;&#xa;+ GetInputTensorShape(): map&lt;string, vector&lt;int64_t&gt;&gt;&#xa;+ GetInputTensor(name): unique_ptr&lt;ZeroCopyTensor&gt;&#xa;+ GetOutputTensor(name): unique_ptr&lt;ZeroCopyTensor&gt;&#xa;+ GetInputNames(): vector&lt;string&gt;&#xa;+ GetOutputName(): vector&lt;string&gt;&#xa;+ TryShrinkMemory(): unit64_t&#xa;+ ClearIntermediateTensor(): void&#xa;- PrepareProgram(parent_scope): bool&#xa;- CreateExecutor(): bool&#xa;- PrepareExecutor(): bool&#xa;- LoadProgramDesc(): bool&#xa;- LoadParametors(): bool&#xa;- SetFeed(input_datas, scope): bool&#xa;- GetFetch(output_data, scope): bool&#xa;- StatisticShapeRangeInfo(): void&#xa;- CollectShapeRangeInfo(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="7WLHaZvOcK6RHJFrd4OO-13" vertex="1">
+          <mxGeometry y="218" width="310" height="292" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-18" value="AnalysisPredictor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry x="790" y="-20" width="310" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-19" value="+ predictor_: unique_ptr&lt;PaddlePredictor&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="7WLHaZvOcK6RHJFrd4OO-18" vertex="1">
+          <mxGeometry y="26" width="310" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-20" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="7WLHaZvOcK6RHJFrd4OO-18" vertex="1">
+          <mxGeometry y="50" width="310" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-21" value="+ Predictor(config)&#xa;+ Run(inputs, output_data, batch_size): bool&#xa;+ ZeroCopyRun(): bool&#xa;+ Clone(): unique_ptr&lt;PaddlePredictor&gt;&#xa;+ GetInputTensorShape(): map&lt;string, vector&lt;int64_t&gt;&gt;&#xa;+ GetInputTensor(name): unique_ptr&lt;ZeroCopyTensor&gt;&#xa;+ GetOutputTensor(name): unique_ptr&lt;ZeroCopyTensor&gt;&#xa;+ GetInputNames(): vector&lt;string&gt;&#xa;+ GetOutputName(): vector&lt;string&gt;&#xa;+ TryShrinkMemory(): unit64_t&#xa;+ ClearIntermediateTensor(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="7WLHaZvOcK6RHJFrd4OO-18" vertex="1">
+          <mxGeometry y="58" width="310" height="162" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-24" value="PaddlePredictor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry x="790" y="-20" width="310" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-25" value="+ predictor_: unique_ptr&lt;PaddlePredictor&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="7WLHaZvOcK6RHJFrd4OO-24" vertex="1">
+          <mxGeometry y="26" width="310" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-26" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="7WLHaZvOcK6RHJFrd4OO-24" vertex="1">
+          <mxGeometry y="50" width="310" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-27" value="+ Predictor(config)&#xa;+ Run(inputs, output_data, batch_size): bool&#xa;+ ZeroCopyRun(): bool&#xa;+ Clone(): unique_ptr&lt;PaddlePredictor&gt;&#xa;+ GetInputTensorShape(): map&lt;string, vector&lt;int64_t&gt;&gt;&#xa;+ GetInputTensor(name): unique_ptr&lt;ZeroCopyTensor&gt;&#xa;+ GetOutputTensor(name): unique_ptr&lt;ZeroCopyTensor&gt;&#xa;+ GetInputNames(): vector&lt;string&gt;&#xa;+ GetOutputName(): vector&lt;string&gt;&#xa;+ TryShrinkMemory(): unit64_t&#xa;+ ClearIntermediateTensor(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="7WLHaZvOcK6RHJFrd4OO-24" vertex="1">
+          <mxGeometry y="58" width="310" height="162" as="geometry" />
+        </mxCell>
+        <mxCell id="7WLHaZvOcK6RHJFrd4OO-29" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.682;entryY=1.025;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" target="7WLHaZvOcK6RHJFrd4OO-27" edge="1" source="UizxXosjJBzB0mAwTxcn-2">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1104.5" y="270" as="sourcePoint" />
+            <mxPoint x="1104.5" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UizxXosjJBzB0mAwTxcn-1" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;entryX=-0.009;entryY=0.227;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="7WLHaZvOcK6RHJFrd4OO-27">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="670" y="74.5" as="sourcePoint" />
+            <mxPoint x="790" y="84" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UizxXosjJBzB0mAwTxcn-2" value="ONNXRuntimePredictor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="980" y="320" width="310" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="UizxXosjJBzB0mAwTxcn-3" value="- config_: AnalysisConfig&#xa;- executor_: unique_ptr&lt;NaiveExecutor&gt;&#xa;- place_: Place&#xa;- scope_: Scope&#xa;- inference_program: shared_ptr&lt;ProgramDesc&gt;&#xa;- op_compatible_map_: OpCompatibleMap&#xa;- feeds_: vector&lt;OpDesc*&gt;&#xa;- fetches_: vector&lt;OpDesc*&gt;&#xa;- feed_tensors_: vector&lt;LoDTensor&gt;&#xa;- predictor_id_: int&#xa;- status_is_cloned_: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="UizxXosjJBzB0mAwTxcn-2">
+          <mxGeometry y="26" width="310" height="164" as="geometry" />
+        </mxCell>
+        <mxCell id="UizxXosjJBzB0mAwTxcn-4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="UizxXosjJBzB0mAwTxcn-2">
+          <mxGeometry y="190" width="310" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="UizxXosjJBzB0mAwTxcn-5" value="+ Init(parent_scope, program): bool&#xa;+ Run(inputs, output_data, batch_size): bool&#xa;+ ZeroCopyRun(): bool&#xa;+ Clone(): unique_ptr&lt;PaddlePredictor&gt;&#xa;+ GetInputTensorShape(): map&lt;string, vector&lt;int64_t&gt;&gt;&#xa;+ GetInputTensor(name): unique_ptr&lt;ZeroCopyTensor&gt;&#xa;+ GetOutputTensor(name): unique_ptr&lt;ZeroCopyTensor&gt;&#xa;+ GetInputNames(): vector&lt;string&gt;&#xa;+ GetOutputName(): vector&lt;string&gt;&#xa;+ TryShrinkMemory(): unit64_t&#xa;+ ClearIntermediateTensor(): void&#xa;- PrepareProgram(parent_scope): bool&#xa;- CreateExecutor(): bool&#xa;- PrepareExecutor(): bool&#xa;- LoadProgramDesc(): bool&#xa;- LoadParametors(): bool&#xa;- SetFeed(input_datas, scope): bool&#xa;- GetFetch(output_data, scope): bool&#xa;- StatisticShapeRangeInfo(): void&#xa;- CollectShapeRangeInfo(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="UizxXosjJBzB0mAwTxcn-2">
+          <mxGeometry y="198" width="310" height="292" as="geometry" />
+        </mxCell>
+        <mxCell id="UizxXosjJBzB0mAwTxcn-6" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.682;entryY=1.025;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="690" y="316" as="sourcePoint" />
+            <mxPoint x="870.0000000000001" y="199.99999999999994" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
