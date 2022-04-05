@@ -8,9 +8,9 @@
 // found in the LICENSE file. See the AUTHORS file for names of contributors.
 
 #include "memory/concurrent_arena.h"
-#include <thread>
 #include "port/port.h"
 #include "util/random.h"
+#include <thread>
 
 namespace ROCKSDB_NAMESPACE {
 
@@ -24,17 +24,16 @@ namespace {
 // 1MB, 64 cores will quickly allocate 64MB, and may quickly trigger a
 // flush. Cap the size instead.
 const size_t kMaxShardBlockSize = size_t{128 * 1024};
-}  // namespace
+} // namespace
 
-ConcurrentArena::ConcurrentArena(size_t block_size, AllocTracker* tracker,
+ConcurrentArena::ConcurrentArena(size_t block_size, AllocTracker *tracker,
                                  size_t huge_page_size)
     : shard_block_size_(std::min(kMaxShardBlockSize, block_size / 8)),
-      shards_(),
-      arena_(block_size, tracker, huge_page_size) {
+      shards_(), arena_(block_size, tracker, huge_page_size) {
   Fixup();
 }
 
-ConcurrentArena::Shard* ConcurrentArena::Repick() {
+ConcurrentArena::Shard *ConcurrentArena::Repick() {
   auto shard_and_index = shards_.AccessElementAndIndex();
 #ifdef ROCKSDB_SUPPORT_THREAD_LOCAL
   // even if we are cpu 0, use a non-zero tls_cpuid so we can tell we
@@ -44,4 +43,4 @@ ConcurrentArena::Shard* ConcurrentArena::Repick() {
   return shard_and_index.first;
 }
 
-}  // namespace ROCKSDB_NAMESPACE
+} // namespace ROCKSDB_NAMESPACE

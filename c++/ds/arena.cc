@@ -11,12 +11,12 @@
 #ifndef OS_WIN
 #include <sys/mman.h>
 #endif
-#include <algorithm>
 #include "logging/logging.h"
 #include "port/malloc.h"
 #include "port/port.h"
 #include "rocksdb/env.h"
 #include "test_util/sync_point.h"
+#include <algorithm>
 
 namespace ROCKSDB_NAMESPACE {
 
@@ -42,11 +42,11 @@ size_t OptimizeBlockSize(size_t block_size) {
   return block_size;
 }
 
-Arena::Arena(size_t block_size, AllocTracker* tracker, size_t huge_page_size)
+Arena::Arena(size_t block_size, AllocTracker *tracker, size_t huge_page_size)
     : kBlockSize(OptimizeBlockSize(block_size)), tracker_(tracker) {
   assert(kBlockSize >= kMinBlockSize && kBlockSize <= kMaxBlockSize &&
          kBlockSize % kAlignUnit == 0);
-  TEST_SYNC_POINT_CALLBACK("Arena::Arena:0", const_cast<size_t*>(&kBlockSize));
+  TEST_SYNC_POINT_CALLBACK("Arena::Arena:0", const_cast<size_t *>(&kBlockSize));
   alloc_bytes_remaining_ = sizeof(inline_block_);
   blocks_memory_ += alloc_bytes_remaining_;
   aligned_alloc_ptr_ = inline_block_;
@@ -69,12 +69,12 @@ Arena::~Arena() {
     assert(tracker_->is_freed());
     tracker_->FreeMem();
   }
-  for (const auto& block : blocks_) {
+  for (const auto &block : blocks_) {
     delete[] block;
   }
 
 #ifdef MAP_HUGETLB
-  for (const auto& mmap_info : huge_blocks_) {
+  for (const auto &mmap_info : huge_blocks_) {
     if (mmap_info.addr_ == nullptr) {
       continue;
     }
@@ -86,7 +86,7 @@ Arena::~Arena() {
 #endif
 }
 
-char* Arena::AllocateFallback(size_t bytes, bool aligned) {
+char *Arena::AllocateFallback(size_t bytes, bool aligned) {
   if (bytes > kBlockSize / 4) {
     ++irregular_block_num;
     // Object is more than a quarter of our block size.  Allocate it separately
@@ -96,7 +96,7 @@ char* Arena::AllocateFallback(size_t bytes, bool aligned) {
 
   // We waste the remaining space in the current block.
   size_t size = 0;
-  char* block_head = nullptr;
+  char *block_head = nullptr;
 #ifdef MAP_HUGETLB
   if (hugetlb_size_) {
     size = hugetlb_size_;
@@ -120,7 +120,7 @@ char* Arena::AllocateFallback(size_t bytes, bool aligned) {
   }
 }
 
-char* Arena::AllocateFromHugePage(size_t bytes) {
+char *Arena::AllocateFromHugePage(size_t bytes) {
 #ifdef MAP_HUGETLB
   if (hugetlb_size_ == 0) {
     return nullptr;
@@ -135,7 +135,7 @@ char* Arena::AllocateFromHugePage(size_t bytes) {
   //   via RAII.
   huge_blocks_.emplace_back(nullptr /* addr */, 0 /* length */);
 
-  void* addr = mmap(nullptr, bytes, (PROT_READ | PROT_WRITE),
+  void *addr = mmap(nullptr, bytes, (PROT_READ | PROT_WRITE),
                     (MAP_PRIVATE | MAP_ANONYMOUS | MAP_HUGETLB), -1, 0);
 
   if (addr == MAP_FAILED) {
@@ -146,27 +146,27 @@ char* Arena::AllocateFromHugePage(size_t bytes) {
   if (tracker_ != nullptr) {
     tracker_->Allocate(bytes);
   }
-  return reinterpret_cast<char*>(addr);
+  return reinterpret_cast<char *>(addr);
 #else
   (void)bytes;
   return nullptr;
 #endif
 }
 
-char* Arena::AllocateAligned(size_t bytes, size_t huge_page_size,
-                             Logger* logger) {
+char *Arena::AllocateAligned(size_t bytes, size_t huge_page_size,
+                             Logger *logger) {
   assert((kAlignUnit & (kAlignUnit - 1)) ==
-         0);  // Pointer size should be a power of 2
+         0); // Pointer size should be a power of 2
 
 #ifdef MAP_HUGETLB
   if (huge_page_size > 0 && bytes > 0) {
     // Allocate from a huge page TBL table.
-    assert(logger != nullptr);  // logger need to be passed in.
+    assert(logger != nullptr); // logger need to be passed in.
     size_t reserved_size =
         ((bytes - 1U) / huge_page_size + 1U) * huge_page_size;
     assert(reserved_size >= bytes);
 
-    char* addr = AllocateFromHugePage(reserved_size);
+    char *addr = AllocateFromHugePage(reserved_size);
     if (addr == nullptr) {
       ROCKS_LOG_WARN(logger,
                      "AllocateAligned fail to allocate huge TLB pages: %s",
@@ -185,7 +185,7 @@ char* Arena::AllocateAligned(size_t bytes, size_t huge_page_size,
       reinterpret_cast<uintptr_t>(aligned_alloc_ptr_) & (kAlignUnit - 1);
   size_t slop = (current_mod == 0 ? 0 : kAlignUnit - current_mod);
   size_t needed = bytes + slop;
-  char* result;
+  char *result;
   if (needed <= alloc_bytes_remaining_) {
     result = aligned_alloc_ptr_ + slop;
     aligned_alloc_ptr_ += needed;
@@ -198,7 +198,7 @@ char* Arena::AllocateAligned(size_t bytes, size_t huge_page_size,
   return result;
 }
 
-char* Arena::AllocateNewBlock(size_t block_bytes) {
+char *Arena::AllocateNewBlock(size_t block_bytes) {
   // Reserve space in `blocks_` before allocating memory via new.
   // Use `emplace_back()` instead of `reserve()` to let std::vector manage its
   // own memory and do fewer reallocations.
@@ -209,19 +209,19 @@ char* Arena::AllocateNewBlock(size_t block_bytes) {
   //   via RAII.
   blocks_.emplace_back(nullptr);
 
-  char* block = new char[block_bytes];
+  char *block = new char[block_bytes];
   size_t allocated_size;
 #ifdef ROCKSDB_MALLOC_USABLE_SIZE
   allocated_size = malloc_usable_size(block);
 #ifndef NDEBUG
   // It's hard to predict what malloc_usable_size() returns.
   // A callback can allow users to change the costed size.
-  std::pair<size_t*, size_t*> pair(&allocated_size, &block_bytes);
+  std::pair<size_t *, size_t *> pair(&allocated_size, &block_bytes);
   TEST_SYNC_POINT_CALLBACK("Arena::AllocateNewBlock:0", &pair);
-#endif  // NDEBUG
+#endif // NDEBUG
 #else
   allocated_size = block_bytes;
-#endif  // ROCKSDB_MALLOC_USABLE_SIZE
+#endif // ROCKSDB_MALLOC_USABLE_SIZE
   blocks_memory_ += allocated_size;
   if (tracker_ != nullptr) {
     tracker_->Allocate(allocated_size);
@@ -230,4 +230,4 @@ char* Arena::AllocateNewBlock(size_t block_bytes) {
   return block;
 }
 
-}  // namespace ROCKSDB_NAMESPACE
+} // namespace ROCKSDB_NAMESPACE

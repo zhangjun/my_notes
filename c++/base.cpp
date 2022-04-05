@@ -1,44 +1,41 @@
 /****************************************************************
     File Name    : base.cpp
     Author       : Jun Zhang
-	Mail         : ewalker.zj@gmail.com 
-	Created Time : 2018-01-03 09-53
+        Mail         : ewalker.zj@gmail.com
+        Created Time : 2018-01-03 09-53
 *****************************************************************/
 
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 class Base {
-    public:
-        Base(){}
-        ~Base(){}
-        Base(const Base &b);
-        Base& operator=(const Base &b);
-        Base *operator &();
-        const Base *operator &() const;
+public:
+  Base() {}
+  ~Base() {}
+  Base(const Base &b);
+  Base &operator=(const Base &b);
+  Base *operator&();
+  const Base *operator&() const;
 
-        virtual void print();
-    private:
-        int idx;
-        int val;
+  virtual void print();
+
+private:
+  int idx;
+  int val;
 };
 
-Base& Base::operator =(const Base &b){
-    cout << "Base::operator =" << endl;
-    idx = b.idx;
-    val = b.val;
-    return *this;
+Base &Base::operator=(const Base &b) {
+  cout << "Base::operator =" << endl;
+  idx = b.idx;
+  val = b.val;
+  return *this;
 }
 
-Base* Base::operator &(){
-    return this;
-}
-void Base::print(){
-    cout << "idx: " << idx << ", val: " << val << endl;
-}
+Base *Base::operator&() { return this; }
+void Base::print() { cout << "idx: " << idx << ", val: " << val << endl; }
 
-int main(){
-    Base b;
-    b.print();
-    return 0;
+int main() {
+  Base b;
+  b.print();
+  return 0;
 }

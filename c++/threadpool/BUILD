@@ -1,28 +1,29 @@
 # https://github.com/apache/incubator-brpc/blob/master/BUILD.bazel
 COPTS = [
+	"-std=c++14",
 ]
 
 LINKOPTS = [
-    "-lpthread",
-    "-ldl",
+    "-pthread",
 ]
 
 cc_library(
-    name = "type_trait",
+    name = "libmain",
     srcs = glob([
         "*.cc",
     ]),
+    hdrs = ['thread_pool.h'],
     copts = COPTS,
     linkopts = LINKOPTS,
     visibility = ["//visibility:public"],
 )
 
 cc_binary(
-    name = "type_main",
+    name = "main",
     visibility = [
 	    "//visibility:public",
     ],
     deps = [
-	    ":type_trait",
+	    ":libmain",
     ],
 )

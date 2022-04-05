@@ -18,8 +18,7 @@ void print(std::string x) {
   std::cout << x << "\n";
 }
 
-
-void produce(Queue<int>& q) {
+void produce(Queue<int> &q) {
   for (int i = 1; i <= nbToProduce; ++i) {
     std::ostringstream tmp;
     tmp << "--> " << i;
@@ -28,7 +27,7 @@ void produce(Queue<int>& q) {
   }
 }
 
-void consume(Queue<int>& q, unsigned int id) {
+void consume(Queue<int> &q, unsigned int id) {
   for (int i = 0; i < nbToConsume; ++i) {
     auto item = q.pop();
     std::ostringstream tmp;
@@ -38,8 +37,7 @@ void consume(Queue<int>& q, unsigned int id) {
 }
 
 #include <thread>
-int main()
-{
+int main() {
   Queue<int> q;
 
   // Start the producer thread.
@@ -47,15 +45,14 @@ int main()
 
   // Start the consumer threads.
   std::vector<std::thread> consumers;
-  for (int i = 0 ; i < nbConsumers ; ++i) {
+  for (int i = 0; i < nbConsumers; ++i) {
     std::thread consumer(std::bind(&consume, std::ref(q), i + 1));
     consumers.push_back(std::move(consumer));
   }
 
   prod1.join();
 
-  for (auto& consumer : consumers) {
+  for (auto &consumer : consumers) {
     consumer.join();
   }
-
 }

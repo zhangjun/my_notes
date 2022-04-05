@@ -1,18 +1,18 @@
 /****************************************************************
     File Name    : bit.cpp
     Author       : Jun Zhang
-	Mail         : ewalker.zj@gmail.com 
-	Created Time : 2017-12-30 12-16
+        Mail         : ewalker.zj@gmail.com
+        Created Time : 2017-12-30 12-16
 *****************************************************************/
 
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main(){
-    int n = 23;
-    while(n != 0){
-        cout << (n & 0x1) << endl;
-        n >>= 1;
-    }
-    return 0;
+int main() {
+  int n = 23;
+  while (n != 0) {
+    cout << (n & 0x1) << endl;
+    n >>= 1;
+  }
+  return 0;
 }
