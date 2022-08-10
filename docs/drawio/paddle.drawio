@@ -1,13 +1,37 @@
-<mxfile host="app.diagrams.net" modified="2022-04-03T13:46:52.793Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="e3i0rC0H3iAKASyGWQub" version="17.4.0" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-08-10T14:05:12.194Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.136 Safari/537.36" etag="MyupRwvm5WZia-Ji_tIP" version="20.2.3" type="github" pages="2">
   <diagram id="AWOcZCu43fl_KOLMqHl1" name="pretictor">
-    <mxGraphModel dx="324" dy="494" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1151" dy="602" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="AQ0Q51QRDwI_gQzqrRHL-1" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;" edge="1" parent="1">
-          <mxGeometry x="-1" y="3" relative="1" as="geometry">
-            <mxPoint x="980" y="230" as="sourcePoint" />
-            <mxPoint x="1070" y="230" as="targetPoint" />
+        <mxCell id="0PC621j1DnHE-il28fqa-1" value="PaddlePassBuilder" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="200" y="70" width="240" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="0PC621j1DnHE-il28fqa-2" value="+ AppendPass(name): void&#xa;+ InsertPass(name): void&#xa;+ DeletePass(name): void " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="0PC621j1DnHE-il28fqa-1">
+          <mxGeometry y="26" width="240" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="0PC621j1DnHE-il28fqa-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="0PC621j1DnHE-il28fqa-1">
+          <mxGeometry y="70" width="240" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="0PC621j1DnHE-il28fqa-4" value="- analysis_passes_: vector&lt;string&gt;&#xa;- passes_: vector&lt;string&gt;&#xa;- unordered_map&lt;string&gt;: deleted_passes_" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="0PC621j1DnHE-il28fqa-1">
+          <mxGeometry y="78" width="240" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="0PC621j1DnHE-il28fqa-5" value="PaddlePassBuilder" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="200" y="280" width="240" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="0PC621j1DnHE-il28fqa-6" value="+ AppendPass(name): void&#xa;+ InsertPass(name): void&#xa;+ DeletePass(name): void " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="0PC621j1DnHE-il28fqa-5">
+          <mxGeometry y="26" width="240" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="0PC621j1DnHE-il28fqa-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="0PC621j1DnHE-il28fqa-5">
+          <mxGeometry y="70" width="240" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="0PC621j1DnHE-il28fqa-8" value="- analysis_passes_: vector&lt;string&gt;&#xa;- passes_: vector&lt;string&gt;&#xa;- unordered_map&lt;string&gt;: deleted_passes_" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="0PC621j1DnHE-il28fqa-5">
+          <mxGeometry y="78" width="240" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="0PC621j1DnHE-il28fqa-10" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="0PC621j1DnHE-il28fqa-5" target="0PC621j1DnHE-il28fqa-4">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="450" y="250" as="sourcePoint" />
+            <mxPoint x="610" y="250" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
