@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-08-28T06:19:21.578Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" etag="lD2fdHEIr4qGDiVNVRse" version="20.2.7" type="github">
+<mxfile host="app.diagrams.net" modified="2022-08-28T06:20:44.050Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" etag="TlbVQhAGWPCNGCCFCnJ3" version="20.2.7" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="946" dy="645" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -238,6 +238,9 @@
         </mxCell>
         <mxCell id="skb5dMRM40Wmm3iBXiT8-61" value="Aggregation (has a)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="910" y="640" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="skb5dMRM40Wmm3iBXiT8-62" value="&lt;span style=&quot;color: rgb(102, 102, 102); font-family: Muli, &amp;quot;Lucida Sans Unicode&amp;quot;, &amp;quot;Lucida Grande&amp;quot;, Verdana, Tahoma, Arial, sans-serif; font-size: 13px; text-align: left; background-color: rgb(255, 255, 255);&quot;&gt;&lt;b&gt;Inheritance (is a)&lt;/b&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="300" y="440" width="120" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
