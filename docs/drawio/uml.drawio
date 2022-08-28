@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-08-28T06:28:14.638Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" etag="B0YdVNivPYGXMOaejswu" version="20.2.7" type="github">
+<mxfile host="app.diagrams.net" modified="2022-08-28T06:30:39.093Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" etag="B0FVZVbn29aYzyrczxP3" version="20.2.7" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="946" dy="645" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -146,9 +146,6 @@
         <mxCell id="skb5dMRM40Wmm3iBXiT8-33" value="+ hand(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="skb5dMRM40Wmm3iBXiT8-30">
           <mxGeometry y="60" width="100" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="skb5dMRM40Wmm3iBXiT8-36" value="&lt;ul style=&quot;box-sizing: border-box; border: 0px; margin: 0px 0px 1.5em 3em; outline: 0px; padding: 0px; vertical-align: baseline; list-style-position: initial; list-style-image: initial; text-align: start;&quot;&gt;&lt;li style=&quot;border: 0px; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;&quot;&gt;Association (knows a)&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="195" y="650" width="170" height="20" as="geometry" />
-        </mxCell>
         <mxCell id="skb5dMRM40Wmm3iBXiT8-37" value="A" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="480" y="538" width="110" height="86" as="geometry" />
         </mxCell>
@@ -180,7 +177,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="skb5dMRM40Wmm3iBXiT8-47" value="Dependency (uses a)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="570" y="645" width="120" height="30" as="geometry" />
+          <mxGeometry x="560" y="630" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="skb5dMRM40Wmm3iBXiT8-48" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="skb5dMRM40Wmm3iBXiT8-38">
           <mxGeometry width="160" relative="1" as="geometry">
@@ -241,6 +238,9 @@
         </mxCell>
         <mxCell id="skb5dMRM40Wmm3iBXiT8-62" value="&lt;span style=&quot;color: rgb(102, 102, 102); font-family: Muli, &amp;quot;Lucida Sans Unicode&amp;quot;, &amp;quot;Lucida Grande&amp;quot;, Verdana, Tahoma, Arial, sans-serif; font-size: 13px; text-align: left; background-color: rgb(255, 255, 255);&quot;&gt;&lt;b&gt;Inheritance (is a)&lt;/b&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="300" y="440" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="skb5dMRM40Wmm3iBXiT8-64" value="Association (knows a)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="200" y="630" width="120" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
