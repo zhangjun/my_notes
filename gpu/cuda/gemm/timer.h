@@ -3,7 +3,7 @@
 #include <chrono>
 
 class GPUTimer {
- public:
+public:
   GPUTimer() {
     cudaEventCreate(&start_);
     cudaEventCreate(&stop_);
@@ -14,13 +14,9 @@ class GPUTimer {
     cudaEventDestroy(stop_);
   }
 
-  void Start(cudaStream_t stream) {
-    cudaEventRecord(start_, stream);
-  }
+  void Start(cudaStream_t stream) { cudaEventRecord(start_, stream); }
 
-  void Stop(cudaStream_t stream) {
-    cudaEventRecord(stop_, stream);
-  }
+  void Stop(cudaStream_t stream) { cudaEventRecord(stop_, stream); }
 
   float ElapsedTime() {
     float milliseconds = 0;
@@ -30,28 +26,27 @@ class GPUTimer {
     return milliseconds;
   }
 
- private:
+private:
   cudaEvent_t start_;
   cudaEvent_t stop_;
 };
 
 class CPUTimer {
- public:
- using high_resolution_clock = std::chrono::high_resolution_clock;
+public:
+  using high_resolution_clock = std::chrono::high_resolution_clock;
   CPUTimer() {}
-  ~ CPUTimer() {}
-  void Start() {
-  }
+  ~CPUTimer() {}
+  void Start() {}
 
-  void Reset() {
-    begin_ = high_resolution_clock::now();
-  }
+  void Reset() { begin_ = high_resolution_clock::now(); }
 
   float ElapsedTime() {
     auto end = high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - begin_);
+    auto duration =
+        std::chrono::duration_cast<std::chrono::microseconds>(end - begin_);
     return duration.count() / 1000.0;
   }
- private:
+
+private:
   high_resolution_clock::time_point begin_;
 };
